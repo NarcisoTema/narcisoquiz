@@ -1,6 +1,11 @@
 [
   {
-    "pergunta": "Qual a capital de Angola?",
+    "pergunta": "Qual é o maior país do mundo em área territorial?",
+    "opcoes": ["Canadá", "China", "Rússia", "Brasil"],
+    "resposta": "Rússia"
+  },
+  {
+    "pergunta": "Qual é a capital de Angola?",
     "opcoes": ["Benguela", "Huambo", "Luanda", "Lubango"],
     "resposta": "Luanda"
   },
@@ -10,14 +15,9 @@
     "resposta": "12"
   },
   {
-    "pergunta": "Qual é o maior país da África?",
-    "opcoes": ["Angola", "Sudão", "Argélia", "Egito"],
-    "resposta": "Argélia"
-  },
-  {
-    "pergunta": "Qual rio atravessa a cidade de Luanda?",
-    "opcoes": ["Rio Cuanza", "Rio Lucala", "Não há rios em Luanda", "Rio Bengo"],
-    "resposta": "Não há rios em Luanda"
+    "pergunta": "Qual é o nome do parlamento angolano?",
+    "opcoes": ["Assembleia Nacional", "Câmara dos Deputados", "Senado", "Congresso Nacional"],
+    "resposta": "Assembleia Nacional"
   },
   {
     "pergunta": "Em que ano a França sediou os Jogos Olímpicos de Verão pela última vez antes de 2024?",
@@ -25,14 +25,14 @@
     "resposta": "1924"
   },
   {
-    "pergunta": "Qual é o nome do parlamento angolano?",
-    "opcoes": ["Assembleia Nacional", "Câmara dos Deputados", "Senado", "Congresso Nacional"],
-    "resposta": "Assembleia Nacional"
+    "pergunta": "Qual rio atravessa a cidade de Luanda?",
+    "opcoes": ["Rio Cuanza", "Rio Lucala", "Não há rios em Luanda", "Rio Bengo"],
+    "resposta": "Não há rios em Luanda"
   },
   {
-    "pergunta": "Qual é o continente onde se encontra o Egito?",
-    "opcoes": ["Ásia", "Europa", "Oceania", "África"],
-    "resposta": "África"
+    "pergunta": "Qual é o planeta mais próximo do Sol?",
+    "opcoes": ["Vênus", "Mercúrio", "Terra", "Marte"],
+    "resposta": "Mercúrio"
   },
   {
     "pergunta": "Quantos países fazem fronteira com Angola?",
@@ -40,9 +40,9 @@
     "resposta": "4"
   },
   {
-    "pergunta": "Qual é o planeta mais próximo do Sol?",
-    "opcoes": ["Vênus", "Mercúrio", "Terra", "Marte"],
-    "resposta": "Mercúrio"
+    "pergunta": "Qual é o continente onde se encontra o Egito?",
+    "opcoes": ["Ásia", "Europa", "Oceania", "África"],
+    "resposta": "África"
   },
   {
     "pergunta": "Qual é o idioma oficial de Angola?",
@@ -60,9 +60,9 @@
     "resposta": "Kwanza"
   },
   {
-    "pergunta": "Qual é o maior país do mundo em área territorial?",
-    "opcoes": ["Canadá", "China", "Rússia", "Brasil"],
-    "resposta": "Rússia"
+    "pergunta": "Qual é o maior país do mundo em número de falantes nativos de português?",
+    "opcoes": ["Portugal", "Brasil", "Angola", "Moçambique"],
+    "resposta": "Brasil"
   },
   {
     "pergunta": "Qual é o maior rio de Angola?",
@@ -238,5 +238,145 @@
     "pergunta": "Qual é o nome do maior teatro de Angola?",
     "opcoes": ["Teatro Nacional de Angola", "Teatro Municipal do Huambo", "Teatro ABC", "Teatro do Morro Bento"],
     "resposta": "Teatro Nacional de Angola"
+  },
+  {
+    "pergunta": "Qual é o nome do maior museu do mundo?",
+    "opcoes": ["Louvre", "Metropolitan", "British Museum", "Hermitage"],
+    "resposta": "Louvre"
+  },
+  {
+    "pergunta": "Qual é o nome da maior empresa tecnológica do mundo por valor de mercado?",
+    "opcoes": ["Apple", "Microsoft", "Amazon", "Google"],
+    "resposta": "Apple"
+  },
+  {
+    "pergunta": "Qual é o nome do famoso monumento pré-histórico localizado na Inglaterra?",
+    "opcoes": ["Stonehenge", "Pyramids of Giza", "Machu Picchu", "Coliseu Romano"],
+    "resposta": "Stonehenge"
+  },
+  {
+    "pergunta": "Qual é o nome do maior jogo de guerra angolano?",
+    "opcoes": ["War", "Angola War", "Guerra Civil Angolana", "Conflitos Tribais"],
+    "resposta": "Guerra Civil Angolana"
+  },
+  {
+    "pergunta": "Qual é o nome do maior livro já escrito em termos de páginas?",
+    "opcoes": ["Bíblia", "Grande Dicionário Enciclopédico", "Encyclopaedia Britannica", "Guinness World Records"],
+    "resposta": "Encyclopaedia Britannica"
+  },
+  {
+    "pergunta": "Qual é o nome do maior artista musical de Angola?",
+    "opcoes": ["Bonga", "Paulino dos Santos", "Yola Semedo", "Titica"],
+    "resposta": "Bonga"
+  },
+  {
+    "pergunta": "Qual é o nome do maior rio do mundo em volume de água?",
+    "opcoes": ["Amazonas", "Congo", "Nilo", "Mississipi"],
+    "resposta": "Amazonas"
+  },
+  {
+    "pergunta": "Qual é o nome do maior clube de futebol africano em títulos continentais?",
+    "opcoes": ["Al Ahly", "Zamalek", "TP Mazembe", "Espérance Tunis"],
+    "resposta": "Al Ahly"
+  },
+  {
+    "pergunta": "Qual é o nome do elemento químico símbolo 'Au'?",
+    "opcoes": ["Prata", "Cobre", "Ouro", "Ferro"],
+    "resposta": "Ouro"
+  },
+  {
+    "pergunta": "Qual é o nome do maior escritor angolano contemporâneo?",
+    "opcoes": ["José Eduardo Agualusa", "Luandino Vieira", "Ruy Duarte de Carvalho", "Valentim Chuvene"],
+    "resposta": "José Eduardo Agualusa"
+  },
+  {
+    "pergunta": "Qual é o nome do maior sistema operacional móvel do mundo?",
+    "opcoes": ["iOS", "Android", "Windows Mobile", "BlackBerry OS"],
+    "resposta": "Android"
+  },
+  {
+    "pergunta": "Qual é o nome do maior grupo étnico em Angola?",
+    "opcoes": ["Ovimbundu", "Ambundu", "Bakongo", "Herero"],
+    "resposta": "Ovimbundu"
+  },
+  {
+    "pergunta": "Qual é o nome do processo de divisão celular conhecido como mitose?",
+    "opcoes": ["Divisão de células somáticas", "Formação de gametas", "Reprodução assexuada", "Mutação genética"],
+    "resposta": "Divisão de células somáticas"
+  },
+  {
+    "pergunta": "Qual é o nome do maior canal de televisão angolano?",
+    "opcoes": ["TPA", "STV", "RTS", "CNN África"],
+    "resposta": "TPA"
+  },
+  {
+    "pergunta": "Qual é o nome do maior vulcão ativo da Europa?",
+    "opcoes": ["Monte Vesúvio", "Monte Etna", "Krakatoa", "Monte St. Helens"],
+    "resposta": "Monte Etna"
+  },
+  {
+    "pergunta": "Qual é o nome do maior jornal diário de Angola?",
+    "opcoes": ["Jornal de Angola", "Novo Jornal", "Visão", "Correio do Futuro"],
+    "resposta": "Jornal de Angola"
+  },
+  {
+    "pergunta": "Qual é o nome do maior software livre do mundo?",
+    "opcoes": ["Linux", "Mozilla Firefox", "LibreOffice", "Apache"],
+    "resposta": "Linux"
+  },
+  {
+    "pergunta": "Qual é o nome do maior evento esportivo de Angola?",
+    "opcoes": ["Taça Independência", "Campeonato Nacional", "Girabola", "Copa ANGOP"],
+    "resposta": "Girabola"
+  },
+  {
+    "pergunta": "Qual é o nome do processo de fusão entre núcleos atômicos?",
+    "opcoes": ["Fissão nuclear", "Fusão nuclear", "Radioatividade", "Decaimento alfa"],
+    "resposta": "Fusão nuclear"
+  },
+  {
+    "pergunta": "Qual é o nome do maior museu de arte africana em Angola?",
+    "opcoes": ["Museu Nacional de Antropologia", "Museu da Moeda", "Museu da Escravatura", "Museu da Revolução"],
+    "resposta": "Museu Nacional de Antropologia"
+  },
+  {
+    "pergunta": "Qual é o nome do maior navegador da internet?",
+    "opcoes": ["Google Chrome", "Firefox", "Safari", "Edge"],
+    "resposta": "Google Chrome"
+  },
+  {
+    "pergunta": "Qual é o nome do maior portal de notícias em Angola?",
+    "opcoes": ["ANGOP", "Reuters", "BBC News", "Notícias ao Minuto"],
+    "resposta": "ANGOP"
+  },
+  {
+    "pergunta": "Qual é o nome do maior tipo de vegetação do planeta?",
+    "opcoes": ["Floresta Temperada", "Floresta Tropical", "Tundra", "Taiga"],
+    "resposta": "Floresta Tropical"
+  },
+  {
+    "pergunta": "Qual é o nome do maior partido político de Angola?",
+    "opcoes": ["MPLA", "UNITA", "FNLA", "PRS"],
+    "resposta": "MPLA"
+  },
+  {
+    "pergunta": "Qual é o nome do maior romance escrito em língua portuguesa?",
+    "opcoes": ["Dom Casmurro", "Memórias Póstumas de Brás Cubas", "Os Maias", "Grande Sertão: Veredas"],
+    "resposta": "Grande Sertão: Veredas"
+  },
+  {
+    "pergunta": "Qual é o nome do maior evento literário de Angola?",
+    "opcoes": ["Feira do Livro de Luanda", "Salão do Livro Angolano", "Bienal de Luanda", "Encontro de Escritores Africanos"],
+    "resposta": "Feira do Livro de Luanda"
+  },
+  {
+    "pergunta": "Qual é o nome do maior campo de petróleo de Angola?",
+    "opcoes": ["Cabinda", "Soyo", "Namibe", "Lunda Norte"],
+    "resposta": "Cabinda"
+  },
+  {
+    "pergunta": "Qual é o nome do maior fenômeno astronômico observável da Terra?",
+    "opcoes": ["Eclipse Solar", "Superlua", "Cometa Halley", "Chuva de meteoros"],
+    "resposta": "Eclipse Solar"
   }
 ]
