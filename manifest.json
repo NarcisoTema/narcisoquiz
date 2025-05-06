@@ -1,0 +1,22 @@
+{
+  "name": "NarcisoQuiz",
+  "short_name": "Quiz",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1e3c72",
+  "theme_color": "#1e90ff",
+  "orientation": "portrait",
+  "description": "Um quiz divertido e educativo desenvolvido por Narciso Tema.",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
