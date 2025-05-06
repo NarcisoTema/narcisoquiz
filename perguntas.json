@@ -8,5 +8,235 @@
     "pergunta": "Quanto é 5 + 7?",
     "opcoes": ["10", "12", "13", "14"],
     "resposta": "12"
+  },
+  {
+    "pergunta": "Qual é o maior país da África?",
+    "opcoes": ["Angola", "Sudão", "Argélia", "Egito"],
+    "resposta": "Argélia"
+  },
+  {
+    "pergunta": "Qual rio atravessa a cidade de Luanda?",
+    "opcoes": ["Rio Cuanza", "Rio Lucala", "Não há rios em Luanda", "Rio Bengo"],
+    "resposta": "Não há rios em Luanda"
+  },
+  {
+    "pergunta": "Em que ano a França sediou os Jogos Olímpicos de Verão pela última vez antes de 2024?",
+    "opcoes": ["1900", "1924", "1968", "1984"],
+    "resposta": "1924"
+  },
+  {
+    "pergunta": "Qual é o nome do parlamento angolano?",
+    "opcoes": ["Assembleia Nacional", "Câmara dos Deputados", "Senado", "Congresso Nacional"],
+    "resposta": "Assembleia Nacional"
+  },
+  {
+    "pergunta": "Qual é o continente onde se encontra o Egito?",
+    "opcoes": ["Ásia", "Europa", "Oceania", "África"],
+    "resposta": "África"
+  },
+  {
+    "pergunta": "Quantos países fazem fronteira com Angola?",
+    "opcoes": ["4", "5", "6", "7"],
+    "resposta": "4"
+  },
+  {
+    "pergunta": "Qual é o planeta mais próximo do Sol?",
+    "opcoes": ["Vênus", "Mercúrio", "Terra", "Marte"],
+    "resposta": "Mercúrio"
+  },
+  {
+    "pergunta": "Qual é o idioma oficial de Angola?",
+    "opcoes": ["Português", "Inglês", "Francês", "Espanhol"],
+    "resposta": "Português"
+  },
+  {
+    "pergunta": "Qual é o maior deserto quente do mundo?",
+    "opcoes": ["Deserto do Saara", "Deserto da Arábia", "Deserto do Kalahari", "Deserto da Austrália"],
+    "resposta": "Deserto do Saara"
+  },
+  {
+    "pergunta": "Qual é a moeda oficial de Angola?",
+    "opcoes": ["Dólar Americano", "Euro", "Kwanza", "Rand Sul-africano"],
+    "resposta": "Kwanza"
+  },
+  {
+    "pergunta": "Qual é o maior país do mundo em área territorial?",
+    "opcoes": ["Canadá", "China", "Rússia", "Brasil"],
+    "resposta": "Rússia"
+  },
+  {
+    "pergunta": "Qual é o maior rio de Angola?",
+    "opcoes": ["Rio Cunene", "Rio Cubango", "Rio Zambeze", "Rio Cuanza"],
+    "resposta": "Rio Cuanza"
+  },
+  {
+    "pergunta": "Qual é o maior oceano da Terra?",
+    "opcoes": ["Oceano Atlântico", "Oceano Índico", "Oceano Pacífico", "Oceano Glacial Antártico"],
+    "resposta": "Oceano Pacífico"
+  },
+  {
+    "pergunta": "Qual é o nome do antigo nome da cidade de Huambo?",
+    "opcoes": ["Nova Lisboa", "São Paulo", "Santa Maria", "Nova Angola"],
+    "resposta": "Nova Lisboa"
+  },
+  {
+    "pergunta": "Qual é o país mais populoso do mundo?",
+    "opcoes": ["Índia", "China", "Estados Unidos", "Indonésia"],
+    "resposta": "Índia"
+  },
+  {
+    "pergunta": "Qual é o nome do maior lago de Angola?",
+    "opcoes": ["Lago Dilolo", "Lago Carumbo", "Lago de Capanda", "Lago de Calueque"],
+    "resposta": "Lago Dilolo"
+  },
+  {
+    "pergunta": "Qual é a língua mais falada do mundo em número de falantes nativos?",
+    "opcoes": ["Inglês", "Espanhol", "Hindi", "Mandarim"],
+    "resposta": "Mandarim"
+  },
+  {
+    "pergunta": "Qual é o nome do movimento que levou à independência de Angola?",
+    "opcoes": ["FRELIMO", "MPLA", "UNITA", "FNLA"],
+    "resposta": "MPLA"
+  },
+  {
+    "pergunta": "Qual é a montanha mais alta do mundo?",
+    "opcoes": ["Monte Kilimanjaro", "Monte Everest", "Monte Aconcágua", "Monte McKinley"],
+    "resposta": "Monte Everest"
+  },
+  {
+    "pergunta": "Qual é a principal língua indígena falada em Angola?",
+    "opcoes": ["Kimbundu", "Umbundu", "Tshiluba", "Nenhuma delas"],
+    "resposta": "Umbundu"
+  },
+  {
+    "pergunta": "Qual é o país mais ao sul do mundo?",
+    "opcoes": ["Chile", "Argentina", "Nova Zelândia", "África do Sul"],
+    "resposta": "Chile"
+  },
+  {
+    "pergunta": "Qual é o nome do primeiro presidente de Angola?",
+    "opcoes": ["José Eduardo dos Santos", "Agostinho Neto", "Jonas Savimbi", "António da Silva Cardoso"],
+    "resposta": "Agostinho Neto"
+  },
+  {
+    "pergunta": "Qual é o menor país do mundo?",
+    "opcoes": ["Malta", "Mônaco", "San Marino", "Vaticano"],
+    "resposta": "Vaticano"
+  },
+  {
+    "pergunta": "Qual é o nome do maior porto de Angola?",
+    "opcoes": ["Porto de Lobito", "Porto de Luanda", "Porto de Namibe", "Porto do Soyo"],
+    "resposta": "Porto de Luanda"
+  },
+  {
+    "pergunta": "Qual é o maior bioma terrestre do mundo?",
+    "opcoes": ["Floresta Tropical", "Tundra", "Floresta Boreal", "Savana"],
+    "resposta": "Floresta Boreal"
+  },
+  {
+    "pergunta": "Qual é o nome do maior parque nacional de Angola?",
+    "opcoes": ["Parque Nacional da Quicama", "Parque Nacional do Iona", "Parque Nacional do Maiombe", "Parque Nacional do Cuando Cubango"],
+    "resposta": "Parque Nacional do Iona"
+  },
+  {
+    "pergunta": "Qual é o elemento químico mais abundante no universo?",
+    "opcoes": ["Carbono", "Hidrogênio", "Oxigênio", "Nitrogênio"],
+    "resposta": "Hidrogênio"
+  },
+  {
+    "pergunta": "Qual é o nome do famoso festival cultural realizado em Benguela?",
+    "opcoes": ["Bengo Festival", "Baía das Pipas", "Benguela Fest", "Carnaval de Benguela"],
+    "resposta": "Baía das Pipas"
+  },
+  {
+    "pergunta": "Qual é o continente com a maior biodiversidade do mundo?",
+    "opcoes": ["Ásia", "América do Sul", "África", "Oceania"],
+    "resposta": "América do Sul"
+  },
+  {
+    "pergunta": "Qual é o nome do grupo étnico mais numeroso em Angola?",
+    "opcoes": ["Ovimbundu", "Ambundu", "Bakongo", "Herero"],
+    "resposta": "Ovimbundu"
+  },
+  {
+    "pergunta": "Qual é o nome da galáxia em que vivemos?",
+    "opcoes": ["Andrômeda", "Via Láctea", "Triângulo", "Sombrero"],
+    "resposta": "Via Láctea"
+  },
+  {
+    "pergunta": "Qual é o nome do famoso poeta angolano considerado patrono da língua portuguesa?",
+    "opcoes": ["Mário de Andrade", "José Carlos Schwarz", "Agostinho Neto", "Valentim Chuvene"],
+    "resposta": "Agostinho Neto"
+  },
+  {
+    "pergunta": "Qual é o animal terrestre mais rápido do mundo?",
+    "opcoes": ["Leão", "Guepardo", "Tigre", "Antílope"],
+    "resposta": "Guepardo"
+  },
+  {
+    "pergunta": "Qual é o nome do maior clube de futebol de Angola em títulos nacionais?",
+    "opcoes": ["Petro de Luanda", "1º de Agosto", "Progresso Sambizanga", "Recreativo Libolo"],
+    "resposta": "1º de Agosto"
+  },
+  {
+    "pergunta": "Qual é o nome do maior arquipélago do mundo?",
+    "opcoes": ["Filipinas", "Indonésia", "Japão", "Maldivas"],
+    "resposta": "Indonésia"
+  },
+  {
+    "pergunta": "Qual é o nome do maior aeroporto de Angola?",
+    "opcoes": ["Aeroporto de Lubango", "Aeroporto de Luanda", "Aeroporto de Huambo", "Aeroporto de Cabinda"],
+    "resposta": "Aeroporto de Luanda"
+  },
+  {
+    "pergunta": "Qual é o nome da camada mais externa da Terra?",
+    "opcoes": ["Crosta", "Manto", "Núcleo", "Atmosfera"],
+    "resposta": "Crosta"
+  },
+  {
+    "pergunta": "Qual é o nome do maior time de basquete de Angola?",
+    "opcoes": ["Interclube", "Petro de Luanda", "ASA", "Primeiro de Agosto"],
+    "resposta": "Primeiro de Agosto"
+  },
+  {
+    "pergunta": "Qual é o nome do satélite natural da Terra?",
+    "opcoes": ["Titan", "Lua", "Deimos", "Fobos"],
+    "resposta": "Lua"
+  },
+  {
+    "pergunta": "Qual é o nome do maior evento musical de Angola?",
+    "opcoes": ["Sumol Summer Fest", "Axé Moxy", "Novembro Azul", "Baía das Pipas"],
+    "resposta": "Axé Moxy"
+  },
+  {
+    "pergunta": "Qual é o nome do maior prêmio Nobel da Paz?",
+    "opcoes": ["Martin Luther King", "Malala Yousafzai", "Nelson Mandela", "Órgãos da ONU"],
+    "resposta": "Nelson Mandela"
+  },
+  {
+    "pergunta": "Qual é o nome do maior jogador angolano na história da seleção?",
+    "opcoes": ["Gilson", "Manucho", "Zuela", "Flávio"],
+    "resposta": "Gilson"
+  },
+  {
+    "pergunta": "Qual é o nome do maior órgão do corpo humano?",
+    "opcoes": ["Coração", "Pele", "Fígado", "Cérebro"],
+    "resposta": "Pele"
+  },
+  {
+    "pergunta": "Qual é o nome do maior centro cultural de Angola?",
+    "opcoes": ["Centro Cultural Português", "Centro Cultural Brasil-Angola", "Instituto Camões", "Espaço Cultural da Fundação EGF"],
+    "resposta": "Centro Cultural Portugal-Angola"
+  },
+  {
+    "pergunta": "Qual é o nome do maior acelerador de partículas do mundo?",
+    "opcoes": ["SLAC", "LHC", "BEPC", "PEP-II"],
+    "resposta": "LHC"
+  },
+  {
+    "pergunta": "Qual é o nome do maior teatro de Angola?",
+    "opcoes": ["Teatro Nacional de Angola", "Teatro Municipal do Huambo", "Teatro ABC", "Teatro do Morro Bento"],
+    "resposta": "Teatro Nacional de Angola"
   }
 ]
