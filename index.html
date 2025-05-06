@@ -36,6 +36,7 @@
   <!-- Quiz -->
   <div id="quizContainer" class="container hidden">
     <h2 id="welcomeUser"></h2>
+    <div id="timerBar" class="timer-bar"><div id="timerFill"></div></div>
     <div id="questionBox">
       <h3 id="question"></h3>
       <div id="options"></div>
@@ -46,7 +47,28 @@
     <button onclick="logout()">Sair</button>
   </div>
 
+  <!-- Tela Final -->
+  <div id="finalScreen" class="container hidden">
+    <h2>Parabéns!</h2>
+    <p id="finalMessage"></p>
+    <p>Total de pontos: <strong id="finalScore"></strong></p>
+    <p>Tu és: <strong id="finalLevel"></strong></p>
+    <button onclick="restartQuiz()">Jogar Novamente</button>
+    <button onclick="showRanking()">Ver Ranking</button>
+  </div>
+
+  <!-- Tela Ranking -->
+  <div id="rankingScreen" class="container hidden">
+    <h2>🏆 Ranking</h2>
+    <ol id="rankingList"></ol>
+    <button onclick="backToQuiz()">Voltar</button>
+  </div>
+
   <footer>Desenvolvido por Narciso Tema</footer>
+
+  <!-- Sons -->
+  <audio id="correctSound" src="sounds/correct.mp3"></audio>
+  <audio id="wrongSound" src="sounds/wrong.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
