@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NarcisoQuiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="loginContainer">
+    <h1>NarcisoQuiz</h1>
+    <input type="text" id="username" placeholder="Nome de usuário" />
+    <input type="password" id="password" placeholder="Senha" />
+    <select id="gender">
+      <option value="">Sexo</option>
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+    </select>
+    <button onclick="register()">Registrar</button>
+    <button onclick="login()">Entrar</button>
+    <button onclick="recover()">Recuperar Conta</button>
+  </div>
+
+  <div class="container hidden" id="quizContainer">
+    <h2 id="welcomeUser"></h2>
+    <div id="questionBox">
+      <h3 id="question"></h3>
+      <div id="options"></div>
+    </div>
+    <p>Pontuação: <span id="score">0</span></p>
+    <p id="levelBadge"></p>
+    <button onclick="nextQuestion()">Próxima</button>
+    <button onclick="logout()">Sair</button>
+  </div>
+
+  <footer>Desenvolvido por Narciso Tema</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
