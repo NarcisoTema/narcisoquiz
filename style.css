@@ -6,69 +6,126 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.dark-blue { background-color: #0b1d3a; color: white; }
-
 body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   min-height: 100vh;
   padding: 40px 20px;
-  position: relative;
   transition: background 0.5s ease;
 }
 
+/* Container centralizado */
 .container {
   width: 100%;
   max-width: 400px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   padding: 30px;
-  border-radius: 10px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
   margin-bottom: 30px;
-  transition: background 0.5s ease;
 }
 
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
-input, select {
+/* Inputs e seletores */
+input,
+select {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
-  border-radius: 5px;
   border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Botões personalizados */
 .blue-button {
-  background-color: #1e90ff;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  margin: 8px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  margin: 5px;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-.blue-button:hover { background-color: #1c86ee; }
 
-.correct { background-color: #32cd32 !important; }
-.wrong { background-color: #ff4c4c !important; }
+.blue-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(30, 144, 255, 0.5);
+}
 
-#options button {
-  margin: 10px 0;
-  display: block;
+.correct {
+  background: linear-gradient(to right, #32cd32, #66cc66) !important;
+  color: white;
+  animation: bounce 0.3s ease;
+}
+
+.wrong {
+  background: linear-gradient(to right, #ff4c4c, #ff6f6f) !important;
+  color: white;
+  animation: shake 0.4s ease;
+}
+
+/* Feedbacks visuais */
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Timer por pergunta */
+.timer-bar {
   width: 100%;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px 0;
 }
 
+.timer-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #1e90ff, #00bfff);
+  transition: width 1s linear;
+}
+
+/* Footer */
 footer {
   margin-top: auto;
   margin-bottom: 20px;
   font-size: 0.9em;
-  opacity: 0.6;
+  opacity: 0.7;
+  text-align: center;
 }
 
+/* Toggle Dark Mode */
 .toggle-switch {
   position: absolute;
   top: 20px;
@@ -82,10 +139,10 @@ footer {
 }
 
 .slider {
-  width: 40px;
-  height: 20px;
+  width: 48px;
+  height: 24px;
   background-color: #ccc;
-  border-radius: 20px;
+  border-radius: 24px;
   position: relative;
   cursor: pointer;
   transition: background-color 0.4s;
@@ -94,8 +151,8 @@ footer {
 .slider::before {
   content: "";
   position: absolute;
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   left: 2px;
   bottom: 2px;
   background-color: white;
@@ -103,33 +160,22 @@ footer {
   transition: transform 0.4s;
 }
 
-input:checked + .slider { background-color: #1e90ff; }
-
-input:checked + .slider::before { transform: translateX(20px); }
-
-.timer-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #fff2;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 10px 0;
-}
-
-.timer-fill {
-  height: 100%;
-  width: 100%;
+input:checked + .slider {
   background-color: #1e90ff;
-  transition: width 1s linear;
 }
 
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Loader com círculo girando */
 .loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0b1d3a;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +186,7 @@ input:checked + .slider::before { transform: translateX(20px); }
 .spinner {
   width: 60px;
   height: 60px;
-  border: 6px solid #ffffff33;
+  border: 6px solid rgba(255, 255, 255, 0.2);
   border-top: 6px solid #1e90ff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -149,4 +195,24 @@ input:checked + .slider::before { transform: translateX(20px); }
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* Telas finais */
+#finalScreen h2,
+#rankingScreen h2 {
+  margin-bottom: 20px;
+}
+
+#rankingList {
+  list-style: none;
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+#rankingList li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
 }
