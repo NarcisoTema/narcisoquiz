@@ -1,3 +1,4 @@
+<script>
 let perguntas = [];
 let current = 0;
 let score = 0;
@@ -48,7 +49,8 @@ function recover() {
 }
 
 function logout() {
-  location.reload();
+  localStorage.removeItem("narcisoUser"); // Remove a sessão
+  location.reload(); // Recarrega a página
 }
 
 function carregarPerguntas() {
@@ -100,3 +102,18 @@ function mostrarPremio() {
   }
   document.getElementById("levelBadge").textContent = `Você alcançou: ${texto}`;
 }
+
+// Verifica se o usuário já está logado ao carregar a página
+function checkLogin() {
+  const dados = getUser();
+  if (dados) {
+    document.getElementById("loginContainer").classList.add("hidden");
+    document.getElementById("quizContainer").classList.remove("hidden");
+    document.getElementById("welcomeUser").textContent = `Bem-vindo, ${dados.user}!`;
+    carregarPerguntas();
+  }
+}
+
+// Roda a verificação de login ao carregar a página
+window.onload = checkLogin;
+</script>
