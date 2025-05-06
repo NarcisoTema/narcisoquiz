@@ -3,7 +3,7 @@ let current = 0;
 let score = 0;
 let timer;
 
-// Carregar pergunta com timer
+// Carregar perguntas
 function carregarPerguntas() {
   fetch("perguntas.json")
     .then((res) => res.json())
@@ -13,6 +13,7 @@ function carregarPerguntas() {
     });
 }
 
+// Mostrar pergunta com timer
 function mostrarPergunta() {
   if (current >= perguntas.length) {
     mostrarPremio();
@@ -24,7 +25,6 @@ function mostrarPergunta() {
   const opcoesDiv = document.getElementById("options");
   opcoesDiv.innerHTML = "";
 
-  // Resetar timer
   startTimer();
 
   pergunta.opcoes.forEach((opcao) => {
@@ -36,6 +36,7 @@ function mostrarPergunta() {
   });
 }
 
+// Timer por pergunta
 function startTimer() {
   clearInterval(timer);
   let timeLeft = 10;
@@ -51,12 +52,14 @@ function startTimer() {
   }, 1000);
 }
 
+// Avançar automaticamente se tempo zerar
 function nextQuestionAuto() {
   current++;
   saveProgress();
   mostrarPergunta();
 }
 
+// Verificar resposta
 function verificarResposta(resposta, btn) {
   clearInterval(timer);
   const perguntaAtual = perguntas[current];
@@ -80,10 +83,6 @@ function verificarResposta(resposta, btn) {
     saveProgress();
     mostrarPergunta();
   }, 500);
-}
-
-function nextQuestion() {
-  mostrarPergunta();
 }
 
 // Salvar progresso
@@ -114,25 +113,36 @@ function getUser() {
 }
 
 function register() {
-  const user = document.getElementById("username").value.trim();
-  const senha = document.getElementById("password").value;
+  const user = document.getElementById("username").value.trim(); // ✅ trim()
+  const senha = document.getElementById("password").value.trim(); // ✅ trim()
   const sexo = document.getElementById("gender").value;
+
   if (!user || !senha || !sexo) {
     alert("Preencha todos os campos.");
     return;
   }
+
   saveUser(user, senha, sexo);
   alert("Registrado com sucesso!");
 }
 
 function login() {
-  const user = document.getElementById("username").value;
-  const senha = document.getElementById("password").value;
+  const user = document.getElementById("username").value.trim(); // ✅ trim()
+  const senha = document.getElementById("password").value.trim(); // ✅ trim()
   const dados = getUser();
-  if (dados && user === dados.user && senha === dados.senha) {
+
+  if (!dados) {
+    alert("Nenhum usuário registrado.");
+    return;
+  }
+
+  if (user === dados.user && senha === dados.senha) {
+    localStorage.setItem("quizSession", user); // ✅ Sessão ativa
+
     document.getElementById("loginContainer").classList.add("hidden");
     document.getElementById("quizContainer").classList.remove("hidden");
     document.getElementById("welcomeUser").textContent = `Bem-vindo, ${user}!`;
+
     loadProgress();
     carregarPerguntas();
   } else {
@@ -144,6 +154,7 @@ function recover() {
   const user = prompt("Digite seu nome de usuário:");
   const sexo = prompt("Digite seu sexo:");
   const dados = getUser();
+
   if (dados && dados.user === user && dados.sexo === sexo) {
     alert(`Sua senha é: ${dados.senha}`);
   } else {
@@ -152,8 +163,7 @@ function recover() {
 }
 
 function logout() {
-  localStorage.removeItem("narcisoUser");
-  localStorage.removeItem("quizProgress");
+  localStorage.removeItem("quizSession"); // ✅ Remove apenas a sessão
   location.reload();
 }
 
@@ -170,10 +180,8 @@ function mostrarPremio() {
     texto = "Nível Bronze!";
   }
 
-  // Salvar no ranking
   saveToRanking(getUser()?.user || "Anônimo", score);
 
-  // Esconder quiz e mostrar tela final
   document.getElementById("quizContainer").classList.add("hidden");
   document.getElementById("finalScreen").classList.remove("hidden");
   document.getElementById("finalScore").textContent = score;
@@ -185,7 +193,7 @@ function saveToRanking(nome, pontos) {
   let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
   ranking.push({ nome, pontos });
   ranking.sort((a, b) => b.pontos - a.pontos);
-  ranking = ranking.slice(0, 5); // top 5
+  ranking = ranking.slice(0, 5);
   localStorage.setItem("ranking", JSON.stringify(ranking));
 }
 
@@ -241,8 +249,10 @@ function checkTheme() {
 
 // Verificação automática de login
 function checkLogin() {
+  const session = localStorage.getItem("quizSession");
   const dados = getUser();
-  if (dados) {
+
+  if (session && dados && dados.user === session) {
     document.getElementById("loginContainer").classList.add("hidden");
     document.getElementById("quizContainer").classList.remove("hidden");
     document.getElementById("welcomeUser").textContent = `Bem-vindo, ${dados.user}!`;
