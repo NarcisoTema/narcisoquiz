@@ -1,16 +1,92 @@
 let perguntas = [];
 let current = 0;
 let score = 0;
+let timer;
 
-// Funções de usuário
-function saveUser(user, senha, sexo) {
-  localStorage.setItem("narcisoUser", JSON.stringify({ user, senha, sexo }));
+// Carregar pergunta com timer
+function carregarPerguntas() {
+  fetch("perguntas.json")
+    .then((res) => res.json())
+    .then((data) => {
+      perguntas = data;
+      mostrarPergunta();
+    });
 }
 
-function getUser() {
-  return JSON.parse(localStorage.getItem("narcisoUser"));
+function mostrarPergunta() {
+  if (current >= perguntas.length) {
+    mostrarPremio();
+    return;
+  }
+
+  const pergunta = perguntas[current];
+  document.getElementById("question").textContent = pergunta.pergunta;
+  const opcoesDiv = document.getElementById("options");
+  opcoesDiv.innerHTML = "";
+
+  // Resetar timer
+  startTimer();
+
+  pergunta.opcoes.forEach((opcao) => {
+    const btn = document.createElement("button");
+    btn.textContent = opcao;
+    btn.className = "blue-button";
+    btn.onclick = () => verificarResposta(opcao, btn);
+    opcoesDiv.appendChild(btn);
+  });
 }
 
+function startTimer() {
+  clearInterval(timer);
+  let timeLeft = 10;
+  const fill = document.getElementById("timerFill");
+  fill.style.width = "100%";
+  timer = setInterval(() => {
+    timeLeft--;
+    fill.style.width = `${(timeLeft / 10) * 100}%`;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      nextQuestionAuto();
+    }
+  }, 1000);
+}
+
+function nextQuestionAuto() {
+  current++;
+  saveProgress();
+  mostrarPergunta();
+}
+
+function verificarResposta(resposta, btn) {
+  clearInterval(timer);
+  const perguntaAtual = perguntas[current];
+
+  const correctSound = document.getElementById("correctSound");
+  const wrongSound = document.getElementById("wrongSound");
+
+  if (resposta === perguntaAtual.resposta) {
+    score += 100;
+    btn.classList.add("correct");
+    correctSound.play();
+  } else {
+    btn.classList.add("wrong");
+    wrongSound.play();
+  }
+
+  document.getElementById("score").textContent = score;
+
+  setTimeout(() => {
+    current++;
+    saveProgress();
+    mostrarPergunta();
+  }, 500);
+}
+
+function nextQuestion() {
+  mostrarPergunta();
+}
+
+// Salvar progresso
 function saveProgress() {
   localStorage.setItem("quizProgress", JSON.stringify({ current, score }));
 }
@@ -28,7 +104,15 @@ function clearProgress() {
   localStorage.removeItem("quizProgress");
 }
 
-// Interface
+// Funções de usuário
+function saveUser(user, senha, sexo) {
+  localStorage.setItem("narcisoUser", JSON.stringify({ user, senha, sexo }));
+}
+
+function getUser() {
+  return JSON.parse(localStorage.getItem("narcisoUser"));
+}
+
 function register() {
   const user = document.getElementById("username").value.trim();
   const senha = document.getElementById("password").value;
@@ -73,55 +157,7 @@ function logout() {
   location.reload();
 }
 
-// Quiz
-function carregarPerguntas() {
-  fetch("perguntas.json")
-    .then(res => res.json())
-    .then(data => {
-      perguntas = data;
-      mostrarPergunta();
-    });
-}
-
-function mostrarPergunta() {
-  if (current >= perguntas.length) {
-    mostrarPremio();
-    clearProgress();
-    return;
-  }
-  const pergunta = perguntas[current];
-  document.getElementById("question").textContent = pergunta.pergunta;
-  const opcoesDiv = document.getElementById("options");
-  opcoesDiv.innerHTML = "";
-  pergunta.opcoes.forEach(opcao => {
-    const btn = document.createElement("button");
-    btn.textContent = opcao;
-    btn.className = "blue-button";
-    btn.onclick = () => verificarResposta(opcao, btn);
-    opcoesDiv.appendChild(btn);
-  });
-}
-
-function verificarResposta(resposta, btn) {
-  const perguntaAtual = perguntas[current];
-  if (resposta === perguntaAtual.resposta) {
-    score += 100;
-    btn.classList.add("correct");
-  } else {
-    btn.classList.add("wrong");
-  }
-  document.getElementById("score").textContent = score;
-  setTimeout(() => {
-    current++;
-    saveProgress();
-    mostrarPergunta();
-  }, 500);
-}
-
-function nextQuestion() {
-  mostrarPergunta();
-}
-
+// Mostrar prêmio
 function mostrarPremio() {
   let texto = "";
   if (score >= 300) {
@@ -133,7 +169,54 @@ function mostrarPremio() {
   } else {
     texto = "Nível Bronze!";
   }
-  document.getElementById("levelBadge").textContent = `Você alcançou: ${texto}`;
+
+  // Salvar no ranking
+  saveToRanking(getUser()?.user || "Anônimo", score);
+
+  // Esconder quiz e mostrar tela final
+  document.getElementById("quizContainer").classList.add("hidden");
+  document.getElementById("finalScreen").classList.remove("hidden");
+  document.getElementById("finalScore").textContent = score;
+  document.getElementById("finalLevel").textContent = texto;
+}
+
+// Ranking local
+function saveToRanking(nome, pontos) {
+  let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+  ranking.push({ nome, pontos });
+  ranking.sort((a, b) => b.pontos - a.pontos);
+  ranking = ranking.slice(0, 5); // top 5
+  localStorage.setItem("ranking", JSON.stringify(ranking));
+}
+
+function showRanking() {
+  const rankingList = document.getElementById("rankingList");
+  rankingList.innerHTML = "";
+  const ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+
+  ranking.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${index + 1}. ${item.nome} - ${item.pontos}`;
+    rankingList.appendChild(li);
+  });
+
+  document.getElementById("finalScreen").classList.add("hidden");
+  document.getElementById("rankingScreen").classList.remove("hidden");
+}
+
+function backToQuiz() {
+  document.getElementById("rankingScreen").classList.add("hidden");
+  document.getElementById("finalScreen").classList.remove("hidden");
+}
+
+function restartQuiz() {
+  current = 0;
+  score = 0;
+  document.getElementById("score").textContent = score;
+  clearProgress();
+  document.getElementById("finalScreen").classList.add("hidden");
+  document.getElementById("quizContainer").classList.remove("hidden");
+  carregarPerguntas();
 }
 
 // Modo escuro
