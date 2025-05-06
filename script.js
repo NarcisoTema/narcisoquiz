@@ -1,8 +1,8 @@
-<script>
 let perguntas = [];
 let current = 0;
 let score = 0;
 
+// Funções de usuário
 function saveUser(user, senha, sexo) {
   localStorage.setItem("narcisoUser", JSON.stringify({ user, senha, sexo }));
 }
@@ -11,12 +11,30 @@ function getUser() {
   return JSON.parse(localStorage.getItem("narcisoUser"));
 }
 
+function saveProgress() {
+  localStorage.setItem("quizProgress", JSON.stringify({ current, score }));
+}
+
+function loadProgress() {
+  const data = JSON.parse(localStorage.getItem("quizProgress"));
+  if (data) {
+    current = data.current;
+    score = data.score;
+    document.getElementById("score").textContent = score;
+  }
+}
+
+function clearProgress() {
+  localStorage.removeItem("quizProgress");
+}
+
+// Interface
 function register() {
-  const user = document.getElementById("username").value;
+  const user = document.getElementById("username").value.trim();
   const senha = document.getElementById("password").value;
   const sexo = document.getElementById("gender").value;
   if (!user || !senha || !sexo) {
-    alert("Preencha todos os campos para registrar.");
+    alert("Preencha todos os campos.");
     return;
   }
   saveUser(user, senha, sexo);
@@ -31,6 +49,7 @@ function login() {
     document.getElementById("loginContainer").classList.add("hidden");
     document.getElementById("quizContainer").classList.remove("hidden");
     document.getElementById("welcomeUser").textContent = `Bem-vindo, ${user}!`;
+    loadProgress();
     carregarPerguntas();
   } else {
     alert("Credenciais inválidas.");
@@ -49,10 +68,12 @@ function recover() {
 }
 
 function logout() {
-  localStorage.removeItem("narcisoUser"); // Remove a sessão
-  location.reload(); // Recarrega a página
+  localStorage.removeItem("narcisoUser");
+  localStorage.removeItem("quizProgress");
+  location.reload();
 }
 
+// Quiz
 function carregarPerguntas() {
   fetch("perguntas.json")
     .then(res => res.json())
@@ -64,8 +85,8 @@ function carregarPerguntas() {
 
 function mostrarPergunta() {
   if (current >= perguntas.length) {
-    alert("Fim do quiz!");
     mostrarPremio();
+    clearProgress();
     return;
   }
   const pergunta = perguntas[current];
@@ -75,17 +96,29 @@ function mostrarPergunta() {
   pergunta.opcoes.forEach(opcao => {
     const btn = document.createElement("button");
     btn.textContent = opcao;
-    btn.onclick = () => verificarResposta(opcao);
+    btn.className = "blue-button";
+    btn.onclick = () => verificarResposta(opcao, btn);
     opcoesDiv.appendChild(btn);
   });
 }
 
-function verificarResposta(resposta) {
-  if (resposta === perguntas[current].resposta) {
+function verificarResposta(resposta, btn) {
+  const perguntaAtual = perguntas[current];
+  if (resposta === perguntaAtual.resposta) {
     score += 100;
-    document.getElementById("score").textContent = score;
+    btn.classList.add("correct");
+  } else {
+    btn.classList.add("wrong");
   }
-  current++;
+  document.getElementById("score").textContent = score;
+  setTimeout(() => {
+    current++;
+    saveProgress();
+    mostrarPergunta();
+  }, 500);
+}
+
+function nextQuestion() {
   mostrarPergunta();
 }
 
@@ -103,7 +136,27 @@ function mostrarPremio() {
   document.getElementById("levelBadge").textContent = `Você alcançou: ${texto}`;
 }
 
-// Verifica se o usuário já está logado ao carregar a página
+// Modo escuro
+function setTheme(isDark) {
+  if (isDark) {
+    document.body.classList.add("dark-blue");
+  } else {
+    document.body.classList.remove("dark-blue");
+  }
+}
+
+document.getElementById("themeToggle").addEventListener("change", function () {
+  setTheme(this.checked);
+  localStorage.setItem("darkMode", this.checked);
+});
+
+function checkTheme() {
+  const isDark = localStorage.getItem("darkMode") === "true";
+  document.getElementById("themeToggle").checked = isDark;
+  setTheme(isDark);
+}
+
+// Verificação automática de login
 function checkLogin() {
   const dados = getUser();
   if (dados) {
@@ -111,9 +164,21 @@ function checkLogin() {
     document.getElementById("quizContainer").classList.remove("hidden");
     document.getElementById("welcomeUser").textContent = `Bem-vindo, ${dados.user}!`;
     carregarPerguntas();
+    loadProgress();
   }
 }
 
-// Roda a verificação de login ao carregar a página
-window.onload = checkLogin;
-</script>
+// Loader
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loader").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+    }, 500);
+  }, 1500);
+});
+
+window.onload = () => {
+  checkTheme();
+  checkLogin();
+};
