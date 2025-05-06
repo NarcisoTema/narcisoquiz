@@ -1,0 +1,12 @@
+[
+  {
+    "pergunta": "Qual a capital de Angola?",
+    "opcoes": ["Benguela", "Huambo", "Luanda", "Lubango"],
+    "resposta": "Luanda"
+  },
+  {
+    "pergunta": "Quanto é 5 + 7?",
+    "opcoes": ["10", "12", "13", "14"],
+    "resposta": "12"
+  }
+]
